@@ -1,0 +1,3 @@
+INDEX VERSION 1.131
+C:\Users\Thais\OneDrive - Fatec Centro Paula Souza\FATEC\5 Semestre 08-2022\Laboratório de Banco de Dados\Tarefas\CRUD Servlets com Maven\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2318593607.index
+\CrudServletsComMaven\src\main\java

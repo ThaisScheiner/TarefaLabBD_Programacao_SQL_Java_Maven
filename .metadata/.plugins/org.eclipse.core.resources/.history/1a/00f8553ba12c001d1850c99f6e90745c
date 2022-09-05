@@ -1,0 +1,104 @@
+package controller;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import model.Marca;
+import persistence.GenericDao;
+import persistence.IMarcaDao;
+import persistence.MarcaDao;
+
+@WebServlet("/marca")
+public class MarcaServlet extends HttpServlet 
+{
+	private static final long serialVersionUID = 1L;
+       
+  
+    public MarcaServlet()
+    {
+        super();
+    }
+
+	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
+	{
+		
+		String id =request.getParameter("id");
+		String nome = request.getParameter("nome");
+		String botao = request.getParameter("botao");
+		
+		Marca m = new Marca();
+		
+		GenericDao gDao = new GenericDao();
+		IMarcaDao mDao = new MarcaDao(gDao);
+		String erro = "";
+		String saida = "";
+		List<Marca>marcas = new ArrayList<Marca>();
+		
+	}
+	
+	private Marca valido(String id, String nome, String botao) throws IOException
+	{
+		Marca m = new Marca();
+		
+		if(botao.equals("Inserir"))
+		{
+			if(id.equals("") || nome.equals(""))
+			{
+				throw new IOException("Preencher ID e Nome");
+			}
+			else
+			{
+				m.setId(Integer.parseInt(id));
+				m.setNome(nome);
+			}
+		}
+		
+		if(botao.equals("Atualizar"))
+		{
+			if(id.equals("") || nome.equals(""))
+			{
+				throw new IOException("Preencher ID e Nome");
+			}
+			else
+			{
+				m.setId(Integer.parseInt(id));
+				m.setNome(nome);
+			}
+		}
+		
+		if(botao.equals("Excluir"))
+		{
+			if(id.equals(""))
+			{
+				throw new IOException("Preencher ID");
+			}
+			else
+			{
+				m.setId(Integer.parseInt(id));
+			}
+		}
+		
+		if(botao.equals("Buscar"))
+		{
+			if(id.equals(""))
+			{
+				throw new IOException("Preencher ID");
+			}
+			else
+			{
+				m.setId(Integer.parseInt(id));
+			}
+		}
+		
+		return m;
+	}
+
+}

@@ -1,0 +1,7 @@
+INDEX VERSION 1.131+C:\Users\Thais\OneDrive - Fatec Centro Paula Souza\FATEC\5 Semestre 08-2022\Laboratório de Banco de Dados\Tarefas\CRUD Servlets com Maven\.metadata\.plugins\org.eclipse.jdt.core
+1865797976.index
+1602128660.index
+3149800699.index
+2703875232.index
+3593142762.index
+1722999847.index
